@@ -75,6 +75,56 @@
                 app:layout_constraintEnd_toEndOf="parent"
         />
 
+        <Button
+                android:id="@+id/btnServiceStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop"
+                app:layout_constraintTop_toBottomOf="@id/btnShowNotification"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnServiceStart"
+        />
+
+        <Button
+                android:id="@+id/btnServiceStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                app:layout_constraintStart_toEndOf="@+id/btnServiceStop"
+                app:layout_constraintTop_toBottomOf="@id/btnShowNotification"
+                app:layout_constraintEnd_toEndOf="parent"
+        />
+
+        <TextView
+                android:id="@+id/tvServiceStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service Stopped"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@id/btnServiceStop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+                android:id="@+id/etSendData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter data to send"
+                app:layout_constraintTop_toBottomOf="@+id/tvServiceStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+        />
+
+        <Button
+                android:id="@+id/btnSendData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send Data"
+                app:layout_constraintTop_toBottomOf="@+id/etSendData"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+        />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

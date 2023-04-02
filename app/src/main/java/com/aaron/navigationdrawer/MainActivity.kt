@@ -79,6 +79,28 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnServiceStart.setOnClickListener {
+            Intent(this, MyService::class.java).also {
+                startService(it)
+                binding.tvServiceStatus.text = "Service Running :D"
+            }
+        }
+
+        binding.btnServiceStop.setOnClickListener {
+            Intent(this, MyService::class.java).also {
+                stopService(it)
+                binding.tvServiceStatus.text = "Service Stopped :("
+            }
+        }
+
+        binding.btnSendData.setOnClickListener {
+            Intent(this, MyService::class.java).also {
+                it.putExtra("EXTRA_DATA", binding.etSendData.text.toString())
+                binding.tvServiceStatus.text = "Service Running :D"
+                startService(it)
+            }
+        }
+
         val intent = Intent(this, MainActivity::class.java)
         val pendingIntent = TaskStackBuilder.create(this).run {
             addNextIntentWithParentStack(intent)
